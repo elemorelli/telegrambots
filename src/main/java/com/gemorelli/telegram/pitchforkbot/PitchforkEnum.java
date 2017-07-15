@@ -1,4 +1,4 @@
-package com.gemorelli.telegram;
+package com.gemorelli.telegram.pitchforkbot;
 
 import java.util.List;
 

@@ -1,5 +1,6 @@
 package com.gemorelli.telegram;
 
+import com.gemorelli.telegram.pitchforkbot.PitchforkBot;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiRequestException;

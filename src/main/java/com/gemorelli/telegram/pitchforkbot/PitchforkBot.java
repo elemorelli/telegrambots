@@ -1,4 +1,4 @@
-package com.gemorelli.telegram;
+package com.gemorelli.telegram.pitchforkbot;
 
 import org.telegram.telegrambots.api.methods.AnswerInlineQuery;
 import org.telegram.telegrambots.api.methods.send.SendMessage;

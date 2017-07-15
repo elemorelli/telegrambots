@@ -120,10 +120,10 @@ public class PitchforkBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return "PitchforkBot";
+        return System.getenv("PITCHFORKBOT-NAME");
     }
 
     public String getBotToken() {
-        return "340947935:AAGctTJEW1jb4v_4feFja5r9nYYvajGMtRA";
+        return System.getenv("PITCHFORKBOT-TOKEN");
     }
 }

@@ -1,6 +1,6 @@
 package com.gemorelli.telegram.pitchforkbot;
 
-public enum PitchforkEnum {
+enum PitchforkEnum {
     TRADITIONAL("/traditional", "The Traditional", "---E"),
     LEFTHANDED("/lefthanded", "The Left Handed", "Ǝ---"),
     FANCY("/fancy", "The Fancy", "---{"),

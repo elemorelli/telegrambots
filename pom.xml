@@ -32,7 +32,7 @@
                     <programs>
                         <program>
                             <mainClass>com.gemorelli.telegram.DeployBots</mainClass>
-                            <name>deploybots</name>
+                            <description>deploybots</description>
                         </program>
                     </programs>
                 </configuration>

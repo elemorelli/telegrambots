@@ -12,7 +12,6 @@ class PitchforkService {
 
     private PitchforkService() {
         pitchforks = new ArrayList<PitchforkEnum>();
-
         Collections.addAll(pitchforks, PitchforkEnum.values());
     }
 

@@ -43,14 +43,6 @@ public class PitchforkBot extends TelegramLongPollingBot {
                     "This is the place you were looking for! Welcome to Automated Pitchfork Shop!" + "\n" +
                     "Just tell us the type of pitchfork you need! We got you covered!";
             sendMessage.setText(welcomeMessage);
-            sendMessage(sendMessage);
-        } else if (text.equals("/about")) {
-            String welcomeMessage = "This parody bot is inspired by /r/pitchforkemporium" + "\n" +
-                    "Visit www.reddit.com/r/pitchforkemporium for more options!";
-            sendMessage.setText(welcomeMessage);
-            sendMessage(sendMessage);
-        } else if (text.equals("/markup")) {
-            sendMessage.setText("Pick a pitchfork!");
             ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
 
             List<KeyboardRow> keyboard = new ArrayList<KeyboardRow>();
@@ -63,6 +55,11 @@ public class PitchforkBot extends TelegramLongPollingBot {
 
             keyboardMarkup.setKeyboard(keyboard);
             sendMessage.setReplyMarkup(keyboardMarkup);
+            sendMessage(sendMessage);
+        } else if (text.equals("/about")) {
+            String welcomeMessage = "This parody bot is inspired by /r/pitchforkemporium" + "\n" +
+                    "Visit www.reddit.com/r/pitchforkemporium for more options!";
+            sendMessage.setText(welcomeMessage);
             sendMessage(sendMessage);
         } else if (text.equals("/hide")) {
             sendMessage.setText("Keyboard hidden");

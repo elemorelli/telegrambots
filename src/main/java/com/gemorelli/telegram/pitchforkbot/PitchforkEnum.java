@@ -1,7 +1,5 @@
 package com.gemorelli.telegram.pitchforkbot;
 
-import java.util.List;
-
 public enum PitchforkEnum {
     TRADITIONAL("/traditional", "The Traditional", "---E"),
     LEFTHANDED("/lefthanded", "The Left Handed", "Ǝ---"),
@@ -16,9 +14,9 @@ public enum PitchforkEnum {
     POUND("/pound", "The Pound", "---£"),
     LIRA("/lira", "The Lira", "---₤");
 
-    private String command;
-    private String name;
-    private String value;
+    private final String command;
+    private final String name;
+    private final String value;
 
     PitchforkEnum(String command, String name, String value) {
         this.command = command;

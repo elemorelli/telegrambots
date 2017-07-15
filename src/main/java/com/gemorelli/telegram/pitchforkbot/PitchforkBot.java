@@ -22,7 +22,6 @@ public class PitchforkBot extends TelegramLongPollingBot {
 
     public void onUpdateReceived(Update update) {
 
-
         try {
             if (update.hasMessage()) {
                 handleMessage(update);
@@ -40,7 +39,6 @@ public class PitchforkBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
-
 
     private void handleMessage(Update update) throws TelegramApiException {
         Message message = update.getMessage();
@@ -112,7 +110,6 @@ public class PitchforkBot extends TelegramLongPollingBot {
 
         answerInlineQuery.setResults(results);
         System.out.println(inlineQuery.getQuery());
-
 
         answerInlineQuery(answerInlineQuery);
     }

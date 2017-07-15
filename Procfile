@@ -1,1 +1,1 @@
-deploybots: sh target/bin/deploybots
+worker: sh target/bin/deploybots

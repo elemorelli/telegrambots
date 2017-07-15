@@ -1,6 +1,5 @@
 package com.gemorelli.telegram.pitchforkbot;
 
-import org.apache.commons.configuration2.Configuration;
 import org.telegram.telegrambots.api.methods.AnswerInlineQuery;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
@@ -20,13 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PitchforkBot extends TelegramLongPollingBot {
-
-    private Configuration config;
-
-    public PitchforkBot(Configuration config) {
-        super();
-        this.config = config;
-    }
 
     public void onUpdateReceived(Update update) {
         try {

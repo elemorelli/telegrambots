@@ -113,12 +113,12 @@ public class PitchforkBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        System.out.println(System.getenv("pitchforkbot.name"));
-        return System.getenv("pitchforkbot.name");
+        System.out.println(System.getenv("User: "+"PITCHFORKBOT_NAME"));
+        return System.getenv("PITCHFORKBOT_NAME");
     }
 
     public String getBotToken() {
-        System.out.println(System.getenv("pitchforkbot.token"));
-        return System.getenv("pitchforkbot.token");
+        System.out.println(System.getenv("Token: " + "PITCHFORKBOT_TOKEN"));
+        return System.getenv("PITCHFORKBOT_TOKEN");
     }
 }

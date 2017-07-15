@@ -4,7 +4,6 @@ import org.telegram.telegrambots.api.methods.AnswerInlineQuery;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
-import org.telegram.telegrambots.api.objects.inlinequery.ChosenInlineQuery;
 import org.telegram.telegrambots.api.objects.inlinequery.InlineQuery;
 import org.telegram.telegrambots.api.objects.inlinequery.inputmessagecontent.InputTextMessageContent;
 import org.telegram.telegrambots.api.objects.inlinequery.result.InlineQueryResult;
@@ -103,13 +102,13 @@ public class PitchforkBot extends TelegramLongPollingBot {
         }
 
         answerInlineQuery.setResults(results);
-        System.out.println(inlineQuery.getQuery());
         answerInlineQuery(answerInlineQuery);
     }
 
     private void handleChosenInlineQuery(Update update) {
-        ChosenInlineQuery chosenInlineQuery = update.getChosenInlineQuery();
-        System.out.println(chosenInlineQuery.getQuery());
+        // TODO: Ver que hace esto
+        //  ChosenInlineQuery chosenInlineQuery = update.getChosenInlineQuery();
+        // System.out.println(chosenInlineQuery.getQuery());
     }
 
     public String getBotUsername() {

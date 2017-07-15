@@ -1,5 +1,6 @@
 package com.gemorelli.telegram.pitchforkbot;
 
+import org.apache.commons.configuration2.Configuration;
 import org.telegram.telegrambots.api.methods.AnswerInlineQuery;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
@@ -20,21 +21,22 @@ import java.util.List;
 
 public class PitchforkBot extends TelegramLongPollingBot {
 
-    public void onUpdateReceived(Update update) {
+    private Configuration config;
 
+    public PitchforkBot(Configuration config) {
+        super();
+        this.config = config;
+    }
+
+    public void onUpdateReceived(Update update) {
         try {
             if (update.hasMessage()) {
                 handleMessage(update);
-            }
-
-            if (update.hasInlineQuery()) {
+            } else if (update.hasInlineQuery()) {
                 handleInlineQuery(update);
-            }
-
-            if (update.hasChosenInlineQuery()) {
+            } else if (update.hasChosenInlineQuery()) {
                 handleChosenInlineQuery(update);
             }
-
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
@@ -110,7 +112,6 @@ public class PitchforkBot extends TelegramLongPollingBot {
 
         answerInlineQuery.setResults(results);
         System.out.println(inlineQuery.getQuery());
-
         answerInlineQuery(answerInlineQuery);
     }
 
@@ -120,10 +121,10 @@ public class PitchforkBot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return System.getenv("PITCHFORKBOT-NAME");
+        return config.getString("pitchforkbot.name");
     }
 
     public String getBotToken() {
-        return System.getenv("PITCHFORKBOT-TOKEN");
+        return config.getString("pitchforkbot.token");
     }
 }

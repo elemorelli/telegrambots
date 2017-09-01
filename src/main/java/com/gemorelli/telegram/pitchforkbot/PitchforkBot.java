@@ -84,17 +84,19 @@ public class PitchforkBot extends TelegramLongPollingBot {
         AnswerInlineQuery answerInlineQuery = new AnswerInlineQuery();
         answerInlineQuery.setInlineQueryId(inlineQuery.getId());
 
+        String writtenText = update.getInlineQuery().getQuery() + " ";
+
         List<InlineQueryResult> results = new ArrayList<InlineQueryResult>();
         for (PitchforkEnum pitchfork : PitchforkService.getPitchforks()) {
             InputTextMessageContent messageContent = new InputTextMessageContent();
             messageContent.disableWebPagePreview();
             messageContent.enableMarkdown(true);
-            messageContent.setMessageText(pitchfork.getValue());
+            messageContent.setMessageText(writtenText + pitchfork.getValue());
             InlineQueryResultArticle pitchforkItem = new InlineQueryResultArticle();
             pitchforkItem.setInputMessageContent(messageContent);
             pitchforkItem.setId(pitchfork.getCommand());
             pitchforkItem.setTitle(pitchfork.getName());
-            pitchforkItem.setDescription(pitchfork.getValue());
+            pitchforkItem.setDescription(writtenText + pitchfork.getValue());
             results.add(pitchforkItem);
         }
 
